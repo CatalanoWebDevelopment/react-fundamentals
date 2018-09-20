@@ -11,6 +11,7 @@ import Resources from './Resources'
 import FunctionalComponent from './FunctionalComponent'
 import TimePiecesApp from '../apps/timer-apps/TimePiecesApp'
 import ReactConceptsApp from '../apps/concept-list-app/ReactConceptsApp'
+import FriendsListApp from '../apps/friends-list/FriendsListApp'
 
 
 const Sidebar = () => (
@@ -23,7 +24,8 @@ const Sidebar = () => (
         <li><Link to="/functionalcomponent">Functional Component</Link></li>
         <li><Link to="/resources">Resources</Link></li>
         <li><Link to="/timer">Timers</Link></li>
-        <li><Link to="/reactconceptlist">React Concepts Checklist</Link></li>
+        <li><Link to="/reactconceptslist">React Concepts Checklist</Link></li>
+        <li><Link to="/friends-list">Friends List Application</Link></li>
       </ul>
     </div>
     <div className="sidebar-route">
@@ -34,10 +36,11 @@ const Sidebar = () => (
             <Route exact path="/functionalcomponent"><FunctionalComponent /></Route>
             <Route exact path="/timer"><TimePiecesApp /></Route>
             <Route exact path="/reactconceptslist"><ReactConceptsApp /></Route>
+            <Route exact path="/friends-list"><FriendsListApp /></Route>
         </Switch>
     </div>
   </div>
 
 )
-
+ 
 export default Sidebar;

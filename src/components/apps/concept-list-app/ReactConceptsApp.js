@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
+import ConceptList from './ConceptList'
+import NewConcept from './NewConcept'
 import { concepts } from './concepts'
 
 export default class ReactConceptsApp extends Component {
@@ -9,6 +11,21 @@ export default class ReactConceptsApp extends Component {
         this.state = { concepts: concepts }
     }
     
+    toggleConcept(concepts) {
+        let concept = _.find(this.state.concepts, concepts);
+        concept.done = !concept.done;
+        this.setState({concepts: this.state.concepts});
+    }
+    
+    createConcept(text) {
+        this.state.concepts.push({
+            text,
+            done: false
+        });
+        
+        this.setState({concepts: this.state.concepts});
+    }
+    
     render() {
         return (
             <div className="main">
@@ -16,8 +33,10 @@ export default class ReactConceptsApp extends Component {
                     <h1>Concept List App</h1>
                     <p>Use the list below to toggle concepts that you do or do not understand. Note that this will update when you refresh the page.</p>
                     
+                    <NewConcept createConcept={this.createConcept.bind(this)} />
+            
                     <h2>General Concepts</h2>
-                    {this.state.concepts}
+                    <ConceptList concepts={this.state.concepts} toggle={this.toggleConcept.bind(this)} />
                 </div>
             </div>
         )

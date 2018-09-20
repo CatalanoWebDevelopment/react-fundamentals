@@ -12,6 +12,7 @@ import FunctionalComponent from './FunctionalComponent'
 import TimePiecesApp from '../apps/timer-apps/TimePiecesApp'
 import ReactConceptsApp from '../apps/concept-list-app/ReactConceptsApp'
 import FriendsListApp from '../apps/friends-list/FriendsListApp'
+import Video from '../apps/YouTubeApi/Video'
 
 
 const Sidebar = () => (
@@ -26,6 +27,7 @@ const Sidebar = () => (
         <li><Link to="/timer">Timers</Link></li>
         <li><Link to="/reactconceptslist">React Concepts Checklist</Link></li>
         <li><Link to="/friends-list">Friends List Application</Link></li>
+        <li><Link to='/youtube-search'>Search the YouTube Database</Link></li>
       </ul>
     </div>
     <div className="sidebar-route">
@@ -37,6 +39,7 @@ const Sidebar = () => (
             <Route exact path="/timer"><TimePiecesApp /></Route>
             <Route exact path="/reactconceptslist"><ReactConceptsApp /></Route>
             <Route exact path="/friends-list"><FriendsListApp /></Route>
+            <Route exact path="/youtube-search"><Video /></Route>
         </Switch>
     </div>
   </div>

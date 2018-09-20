@@ -9,6 +9,8 @@ import {
 import Home from './Home'
 import Resources from './Resources'
 import FunctionalComponent from './FunctionalComponent'
+import TimePiecesApp from '../apps/timer-apps/TimePiecesApp'
+import ReactConceptsApp from '../apps/concept-list-app/ReactConceptsApp'
 
 
 const Sidebar = () => (
@@ -20,6 +22,8 @@ const Sidebar = () => (
         <li><Link to="/rationale">Rationale</Link></li>
         <li><Link to="/functionalcomponent">Functional Component</Link></li>
         <li><Link to="/resources">Resources</Link></li>
+        <li><Link to="/timer">Timers</Link></li>
+        <li><Link to="/reactconceptlist">React Concepts Checklist</Link></li>
       </ul>
     </div>
     <div className="sidebar-route">
@@ -28,6 +32,8 @@ const Sidebar = () => (
             <Route exact path="/resources"><Resources /></Route>
             <Route exact path="/"><Home /></Route>
             <Route exact path="/functionalcomponent"><FunctionalComponent /></Route>
+            <Route exact path="/timer"><TimePiecesApp /></Route>
+            <Route exact path="/reactconceptslist"><ReactConceptsApp /></Route>
         </Switch>
     </div>
   </div>
